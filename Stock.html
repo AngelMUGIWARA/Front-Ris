@@ -8,21 +8,21 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Turnos</h2>
+        <h2 class="text-center mb-4">Stock</h2>
         <table class="table table-bordered table-hover">
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
-                    <th>Paciente</th>
-                    <th>Fecha</th>
+                    <th>Medicamento</th>
+                    <th>Descripcion</th>
                     <th>Acción</th>
                 </tr>
             </thead>
             <tbody id="tabla-turnos">
                 <tr>
                     <td>1</td>
-                    <td>Angel NL</td>
-                    <td>2025-01-07</td>
+                    <td>Paracetamol</td>
+                    <td>pal dolor</td>
                     <td><button class="btn btn-warning btn-sm" onclick="editarTurno(1)">Editar</button>
                         <button class="btn btn-danger btn-sm" onclick="eliminarTurno(1)">Eliminar</button>
                     </td>
@@ -30,10 +30,10 @@
                 </tr>
             </tbody>
         </table>
-        <button class="btn btn-success" onclick="agregarTurno()">Agregar Turno</button>
+        <button class="btn btn-success" onclick="agregarMedicamento()">Agregar Medicamento</button>
         <br>
         <br>
-        <a class="btn btn-success" href="Stock.html">Ir al Stock de insumos</a>
+        <a class="btn btn-success" href="Turnos.html">Turnos</a>
         <br>
         <br>
         <a class="btn btn-success" href="Factura.html">facturación del servicio </a>
