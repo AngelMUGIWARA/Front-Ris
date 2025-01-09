@@ -2,3 +2,14 @@
     color: blue;
     text-align: center;
 }
+
+.carousel-inner img {
+    object-fit: cover;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+.btn-custom {
+    font-size: 1rem;  
+    padding: 10px 30px; 
+}

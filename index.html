@@ -1,29 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <title>RIS</title>
 </head>
 <body>
-    <header class="encabezado"> <h1>Bienvenido a RIS</h1></header>
-    <br>
-    <div>
-        <p>RIS
+    <header class="text-center py-4 bg-light">
+        <h1 class="text-primary">Bienvenido a RIS <i class="fas fa-hospital"></i></h1>
+    </header>
 
+    <!-- Carrusel de imágenes -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+                <img src="img/doctor.png" class="d-block w-40" alt="Doctor 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/doctor2.png" class="d-block w-40" alt="Doctor 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/doctor3.png" class="d-block w-40" alt="Doctor 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="container text-center mt-5">
+        <p>
             Nos complace tenerte aquí. Esta plataforma está diseñada para optimizar la gestión de diagnósticos, permitiéndote administrar turnos, controlar el stock de insumos, realizar facturación de servicios y generar reportes detallados con estadísticas.
-            
+            <br>
             Nuestra misión es ayudarte a ofrecer un servicio más eficiente y preciso.
-            ¡Gracias por confiar en nosotros!</p>
-    </div>
-    <div  class="d-flex justify-content-center align-items-center ">
-        <button class="btn btn-primary">Entrar</button>
+            <br>
+            ¡Gracias por confiar en nosotros!
+        </p>
+        <a href="Turnos.html" class="btn btn-primary mt-3 btn-custom ">Entrar</a>
     </div>
 
+    <footer class="text-center py-4 bg-light mt-5">
+        <p>&copy; 2025 RIS - Todos los derechos reservados</p>
+    </footer>
 
-    <footer></footer>
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
