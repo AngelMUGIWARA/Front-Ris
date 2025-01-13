@@ -9,46 +9,30 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Turnos</h2>
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" id="tabla-turnos">
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
                     <th>Paciente</th>
                     <th>Fecha</th>
+                    <th>Doctor</th>
+                    <th>Insumo</th>
                     <th>Acción</th>
                 </tr>
             </thead>
-            <tbody id="tabla-turnos">
-                <tr>
-                    <td>1</td>
-                    <td>Angel NL</td>
-                    <td>2025-01-07</td>
-                    <td><button class="btn btn-warning btn-sm" onclick="editarTurno(1)">Editar</button>
-                        <button class="btn btn-danger btn-sm" onclick="eliminarTurno(1)">Eliminar</button>
-                    </td>
-                   
-                </tr>
+            <tbody>
+                <!-- Los datos de los turnos se llenarán aquí mediante JavaScript -->
             </tbody>
         </table>
         <button class="btn btn-success" onclick="agregarTurno()">Agregar Turno</button>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Stock.html">Ir al Stock de insumos</a>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Factura.html">facturación del servicio </a>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Reportes.html">Reportes</a>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Estadistica.html">Estadisticas</a>
-
+        <br><br>
+        <a class="btn btn-success" href="Stock.html">Ir al Stock de insumos</a><br><br>
+        <a class="btn btn-success" href="Factura.html">Facturación del servicio</a><br><br>
+        <a class="btn btn-success" href="Reportes.html">Reportes</a><br><br>
+        <a class="btn btn-success" href="Estadistica.html">Estadísticas</a>
     </div>
 
-
-
-
-     <script src="js/bootstrap.js"></script>
+    <script src="js/Turnos.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
