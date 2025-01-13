@@ -10,10 +10,7 @@ function llenarTabla(data) {
             <td>${turno.paciente}</td>
             <td>${turno.fechaHora}</td>
             <td>${turno.doctor.nombre}</td>
-            <td>${turno.doctor.especialidad}</td>
             <td>${turno.insumo.nombre}</td>
-            <td>${turno.insumo.descripcion}</td>
-            <td>${turno.insumo.stock}</td>
         `;
 
         tbody.appendChild(row);
