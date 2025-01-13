@@ -4,51 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Gestión de turnos</title>
+    <title>Gestión de Stock</title>
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Stock</h2>
-        <table class="table table-bordered table-hover">
+        <h2 class="text-center mb-4">Stock de Insumos</h2>
+        <table class="table table-bordered table-hover" id="tabla-stock">
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
                     <th>Medicamento</th>
-                    <th>Descripcion</th>
-                    <th>Acción</th>
+                    <th>Descripción</th>
+                    <th>Stock</th>
                 </tr>
             </thead>
-            <tbody id="tabla-turnos">
-                <tr>
-                    <td>1</td>
-                    <td>Paracetamol</td>
-                    <td>pal dolor</td>
-                    <td><button class="btn btn-warning btn-sm" onclick="editarTurno(1)">Editar</button>
-                        <button class="btn btn-danger btn-sm" onclick="eliminarTurno(1)">Eliminar</button>
-                    </td>
-                   
-                </tr>
+            <tbody>
+                <!-- Los datos del stock se llenarán aquí mediante JavaScript -->
             </tbody>
         </table>
-        <button class="btn btn-success" onclick="agregarMedicamento()">Agregar Medicamento</button>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Turnos.html">Turnos</a>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Factura.html">facturación del servicio </a>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Reportes.html">Reportes</a>
-        <br>
-        <br>
-        <a class="btn btn-success" href="Estadistica.html">Estadisticas</a>
-
+        <!-- Botón para generar el reporte PDF -->
+        <button class="btn btn-success" onclick="generarReportePDF()">Generar Reporte PDF</button>
+        <br><br>
+        <a class="btn btn-success" href="Turnos.html">Ir a Turnos</a><br><br>
     </div>
 
-
-
-
-     <script src="js/bootstrap.js"></script>
+    <!-- Referencia a jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/Stock.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
