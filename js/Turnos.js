@@ -1,70 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
+function llenarTabla(data) {
+    const tbody = document.querySelector("#tabla-turnos tbody");
+    tbody.innerHTML = '';  
 
-    const API_URL = 'http://localhost:8080/turnos';
+    data.forEach(turno => {
+        const row = document.createElement('tr');
 
-    function loadTable(){
-        fetch(API_URL, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const tablebody = document.querySelector('#tabla-turnos tbody');
-            tablebody.innerHTML = '';
-            data.results.forEach((turno, index) => {
+        row.innerHTML = `
+            <td>${turno.id}</td>
+            <td>${turno.paciente}</td>
+            <td>${turno.fechaHora}</td>
+            <td>${turno.doctor.nombre}</td>
+            <td>${turno.doctor.especialidad}</td>
+            <td>${turno.insumo.nombre}</td>
+            <td>${turno.insumo.descripcion}</td>
+            <td>${turno.insumo.stock}</td>
+        `;
 
-                //Columna de id
-                const row = document.createElement('tr');
-                const numberCell = document.createElement('th');
-                numberCell.scope = 'row';
-                numberCell.textContent = index + 1;
-                row.appendChild(numberCell);
+        tbody.appendChild(row);
+    });
+}
 
-                //Columna de Paciente
-                const pacienteCell = document.createElement('td');
-                pacienteCell.textContent = turno.paciente;
-                row.appendChild(pacienteCell);
-
-                //Columna de Fecha
-                const fechaCell = document.createElement('td');
-                fechaCell.textContent = turno.fecha;
-                row.appendChild(fechaCell);
-
-                //Columnda Acciones
-                const actionscell = document.createElement('td');
-
-                //Boton Editar
-                const editButton = document.createElement('button');
-                editButton.className = 'btn btn-primary btn-sm mr-2';
-                editButton.textContent = 'Editar';
-                editButton.addEventListener('click', () => {
-                    openEditModal(turno.id, turno.paciente, turno.fecha);
-                });
-                actionscell.appendChild(editButton);
-
-                row.appendChild(actionscell);
-                tablebody.appendChild(row);
-            });
-
-        })
-        .catch(error => {
-            console.error('Error al obtener los datos:', error);
-        }); 
-    }
-
-    function openEditModal(id, paciente, fecha){
-        document.getElementById('turnoId').value = id;
-        document.getElementById('pacienteId').value = paciente;
-        document.getElementById('fechaId').value = fecha;
-        document.getElementById('editModal').style.display = 'block';
-    }
-
-    function closeEditModal() {
-        document.getElementById('categoryModal').style.display = 'none';
-    }
-
-    loadTable();
-});
+fetch('http://localhost:8080/turnos')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la solicitud: ' + response.statusText);
+        }
+        return response.json();  
+    })
+    .then(data => {
+        llenarTabla(data);
+    })
+    .catch(error => {
+        console.error('Error al cargar los datos:', error);
+        alert('Hubo un problema al cargar los datos. Verifica la conexión o la URL.');
+    });
