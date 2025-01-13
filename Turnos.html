@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Gestión de turnos</title>
+    <title>Gestión de Turnos</title>
 </head>
 <body>
     <div class="container mt-5">
@@ -18,7 +18,7 @@
                     <th>Doctor</th>
                     <th>Insumo</th>
                     <th>Acciones</th>
-                </tr>   
+                </tr>
             </thead>
             <tbody>
                 <!-- Los datos de los turnos se llenarán aquí mediante JavaScript -->
@@ -26,10 +26,47 @@
         </table>
         <button class="btn btn-success" onclick="agregarTurno()">Agregar Turno</button>
         <br><br>
-        <a class="btn btn-success" href="Stock.html">Ir al Stock de insumos</a><br><br>
+        <a class="btn btn-success" href="Stock.html">Ir al Stock de insumos</a>
     </div>
 
-    <script src="js/Turnos.js"></script>
+    <!-- Modal para agregar/editar turnos -->
+    <div class="modal fade" id="turnoModal" tabindex="-1" aria-labelledby="turnoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="turnoModalLabel">Gestionar Turno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formTurno">
+                        <div class="mb-3">
+                            <label for="paciente" class="form-label">Paciente</label>
+                            <input type="text" class="form-control" id="paciente" name="paciente" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaHora" class="form-label">Fecha y Hora</label>
+                            <input type="datetime-local" class="form-control" id="fechaHora" name="fechaHora" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="doctor" class="form-label">Doctor</label>
+                            <input type="text" class="form-control" id="doctor" name="doctor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="insumo" class="form-label">Insumo</label>
+                            <input type="text" class="form-control" id="insumo" name="insumo">
+                        </div>
+                        <input type="hidden" id="turnoId" name="id">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarTurno()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/bootstrap.js"></script>
+    <script src="js/Turnos.js"></script>
 </body>
 </html>
